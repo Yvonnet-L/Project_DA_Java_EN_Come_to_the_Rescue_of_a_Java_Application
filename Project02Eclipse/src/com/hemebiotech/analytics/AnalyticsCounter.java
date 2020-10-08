@@ -1,6 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
@@ -11,13 +12,16 @@ public class AnalyticsCounter {
 	
 	public static void main(String args[]) throws Exception {
 		// first get input
-		BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"));
+		// Reacfectation du chemin du fichier
+		File file = new File("c://Users/ptiqu/git/sourceP2/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/symptoms.txt");
+		BufferedReader reader = new BufferedReader (new FileReader(file));
 		String line = reader.readLine();
 
-		int i = 0;	// set i to 0
+		
+		int i = 0;	/
 		int headCount = 0;	// counts headaches
 		while (line != null) {
-			i++;	// increment i
+			i++;	
 			System.out.println("symptom from file: " + line);
 			if (line.equals("headache")) {
 				headCount++;

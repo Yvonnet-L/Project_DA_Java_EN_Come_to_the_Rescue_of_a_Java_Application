@@ -17,7 +17,7 @@ public class AnalyticsCounter {
 		BufferedReader reader = new BufferedReader (new FileReader(file));
 		String line = reader.readLine();
 
-		
+																																												
 		int i = 0;	/
 		int headCount = 0;	// counts headaches
 		while (line != null) {

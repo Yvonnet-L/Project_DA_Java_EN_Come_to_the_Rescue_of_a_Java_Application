@@ -3,6 +3,12 @@ package com.hemebiotech.analytics;
 import java.util.List;
 import java.util.Map;
 
+import com.hemebiotech.analytics.count.CountSymptoms;
+import com.hemebiotech.analytics.reader.ReadSymptomDataFromFile;
+import com.hemebiotech.analytics.sort.SortSymptoms;
+import com.hemebiotech.analytics.writer.WriteSympOut2Txt;
+import com.hemebiotech.analytics.writer.WriteSympOutTxt;
+
 /**
  * 	 This program retrieves a list of data from the symptoms.txt file,
 *    to process them and output them in a resultsout.txt file 

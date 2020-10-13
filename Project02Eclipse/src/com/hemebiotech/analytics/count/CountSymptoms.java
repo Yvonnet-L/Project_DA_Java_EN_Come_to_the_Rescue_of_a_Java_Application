@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.count;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import java.util.TreeMap;
  * @author ptiqu
  *
  */
-public class CountSymptoms {
+public abstract class CountSymptoms implements ISymptomsCount {
 	
 
 	public static Map<String, Integer> mlst = new HashMap<>();

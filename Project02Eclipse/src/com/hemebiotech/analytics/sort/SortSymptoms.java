@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.sort;
 
 import java.util.ArrayList;
 import java.util.Collections;

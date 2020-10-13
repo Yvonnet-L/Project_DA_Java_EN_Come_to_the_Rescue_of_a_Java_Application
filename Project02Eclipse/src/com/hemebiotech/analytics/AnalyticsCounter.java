@@ -1,6 +1,6 @@
 package com.hemebiotech.analytics;
-
-import java.io.BufferedReader;
+/*
+ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -44,4 +44,5 @@ public class AnalyticsCounter {
 		writer.write("dialated pupils: " + pupilCount + "\n");
 		writer.close();
 	}
-}
+}     
+    */

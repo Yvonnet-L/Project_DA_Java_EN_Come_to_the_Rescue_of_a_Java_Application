@@ -1,11 +1,7 @@
 package com.hemebiotech.analytics;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Occurs;
 
 /**
  * 	 This program retrieves a list of data from the symptoms.txt file,
@@ -19,20 +15,17 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Occurs;
 public class DevMain1 {
 
 	public static void main(String[] args) {
-	
 		/**
 		 *  initiation of the file address
-		 */
-		String stringfile = "c://Users/ptiqu/git/sourceP2/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/symptoms.txt";	
-		
+		 */	
+		String stringfile = "symptoms.txt";	
 		/**
 		*  1/4 Classe : ReadSymptomDataFromFile
 		*
 		*	ReadSymptomDataFromFile retrieving the list of data from the text file
 		*/
 		ReadSymptomDataFromFile rsymp = new ReadSymptomDataFromFile(stringfile);
-		List<String> resultL = rsymp.getSymptoms();
-		
+		List<String> resultL = rsymp.getSymptoms();	
 		/**
 		 *  2/4 Classe : SortSymptoms		
 		 */	
@@ -43,8 +36,8 @@ public class DevMain1 {
 		 * 
 		 * Sends the list to CoutSymp for creation of the hashlist with the number of occurrences				
 		 */
-		CountSymptoms count1 = new CountSymptoms(resultL);	
-		Map<String, Integer> occurR = count1.Count(resultL);
+		//CountSymptoms count1 = new CountSymptoms(resultL);	
+		Map<String, Integer> occurR = CountSymptoms.Count(resultL);
 		
 		/**
 		 *  4/4 Classe : WriteSymptoms	
@@ -52,7 +45,9 @@ public class DevMain1 {
 		 *  Calls class to create the text file
 		 */
 		WriteSympOutTxt writeOut = new WriteSympOutTxt();
+		WriteSympOut2Txt writeOut2 = new WriteSympOut2Txt();
 		writeOut.outMlst(occurR);
+		writeOut2.outMlst(occurR);
 		System.out.println(  "           ---> End  <-- ");
 
 	}

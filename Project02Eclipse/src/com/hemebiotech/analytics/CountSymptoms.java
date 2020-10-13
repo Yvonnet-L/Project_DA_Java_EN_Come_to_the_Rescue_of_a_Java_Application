@@ -14,7 +14,7 @@ public class CountSymptoms {
 	
 
 	public static Map<String, Integer> mlst = new HashMap<>();
-	public static List<String> resultL = new ArrayList<>();
+	public List<String> resultL = new ArrayList<>();
 
 	public CountSymptoms (List<String> resultL){
 		this.resultL = resultL;

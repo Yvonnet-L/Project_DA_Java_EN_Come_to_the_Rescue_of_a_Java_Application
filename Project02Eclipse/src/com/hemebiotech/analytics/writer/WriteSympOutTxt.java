@@ -10,11 +10,12 @@ import java.util.Map;
  * @author ptiqu
  *
  */
-public class WriteSympOutTxt {
+public class WriteSympOutTxt implements ISympWriter {
 	/**
 	 * @param outMlst   Hashlist that we want to use
 	 */
 	// Creation of the backup file of the results of the occurrences with Sort	
+	@Override
 	public void outMlst(Map<String, Integer> outMlst) {	
 		
 			File fileT = new File("resultsOut.txt");				
@@ -44,20 +45,27 @@ public class WriteSympOutTxt {
 					
 						for ( Map.Entry<String, Integer> entry: outMlst.entrySet() )
 						{
-						String cle= ("" +  entry.getKey() );
-						String valeur= (""+ entry.getValue() ); 
-						String strfinal = String.format("| %-27s | %12s |\n",cle,valeur);
-						bw.write(strfinal);
-						} 
+							String cle= ("" +  entry.getKey() );
+							String valeur= (""+ entry.getValue() ); 
+							String strfinal = String.format("| %-27s | %12s |\n",cle,valeur);
+							bw.write(strfinal);
+						} 	
+						
 				      bw.write( "+-----------------------------+--------------+" );				
 					// close buffererd and writer - otherwise infinite loop
 				      bw.close();
-				      writer.close();
-				    
+					  writer.close();    
 					// treatment of the exception if the file does not exist
 					} catch(IOException e) {
 						e.printStackTrace();
 					}finally {
+						/*if (fileT != null) {
+							try {				
+								((AutoCloseable) fileT).close();
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						} */
 						  System.out.println("--->  OutTxt.txt file created  1 <---");
 					}	
 	}

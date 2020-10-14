@@ -10,15 +10,27 @@ import java.util.List;
  */
 public class SortSymptoms {
 
-	public static List<String> lst = new ArrayList<>();
-/**
- * 
- * @param lst represents the list of uncalculated symptoms
- * @return ranked list
- */
-	public static List<String> sortlst(List<String> lst) {
-	Collections.sort(lst);
-	return lst;
-	}
 
-}
+	public static List<String> list = new ArrayList<>();
+
+	public static List<String> sortlst(List<String> list) {
+			Collections.sort(list);
+			return list;	   
+		}
+} 
+	
+
+/*
+ * @param list represents the list of uncalculated symptoms
+ * @return ranked list
+*/
+
+/*public class SortSymptoms {
+
+	public static Set<String> symptomsOrdered ( List<String> symptômes) {
+		
+		Set<String> symptomsOrdered = new TreeSet<>(symptômes);
+		
+		return symptomsOrdered;
+	}   */
+

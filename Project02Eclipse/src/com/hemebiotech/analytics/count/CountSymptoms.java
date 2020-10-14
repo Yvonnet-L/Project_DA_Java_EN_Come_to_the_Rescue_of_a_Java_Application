@@ -16,7 +16,8 @@ public abstract class CountSymptoms implements ISymptomsCount {
 	public static Map<String, Integer> mlst = new HashMap<>();
 	public List<String> resultL = new ArrayList<>();
 
-	public CountSymptoms (List<String> resultL){
+	public CountSymptoms(List<String> resultL) {
+		super();
 		this.resultL = resultL;
 	}
 	/**

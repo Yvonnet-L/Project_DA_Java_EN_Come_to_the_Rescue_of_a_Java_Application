@@ -36,7 +36,13 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			reader.close();
 			} catch (IOException e) {
 				e.printStackTrace();
-			}		
+			}finally {
+				/*	try {				
+						((AutoCloseable) result).close();
+					} catch (Exception e) {
+						e.printStackTrace();
+					} */
+			}
 		}	
 		return result;
 	}

@@ -2,6 +2,8 @@ package com.hemebiotech.analytics;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 import com.hemebiotech.analytics.count.CountSymptoms;
 import com.hemebiotech.analytics.reader.ReadSymptomDataFromFile;
@@ -35,8 +37,10 @@ public class DevMain1 {
 		/**
 		 *  2/4 Classe : SortSymptoms		
 		 */	
-		SortSymptoms.sortlst(resultL); 	
-		
+				// Set <String> symptomsOrdered = new TreeSet<>(resultL);
+				// SortSymptoms.symptomsOrdered(resultL);
+			SortSymptoms.sortlst(resultL);
+	
 		/** 
 		 * 3/4 Classe : CountSymptoms	
 		 * 
@@ -44,7 +48,7 @@ public class DevMain1 {
 		 */
 		//CountSymptoms count1 = new CountSymptoms(resultL);	
 		Map<String, Integer> occurR = CountSymptoms.Count(resultL);
-		
+;
 		/**
 		 *  4/4 Classe : WriteSymptoms	
 		 *  

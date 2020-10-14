@@ -7,12 +7,13 @@ import java.util.Map;
  *  Process a HashMap for saving in a text file: results.out.txt
  * @author ptiqu
  */
-public class WriteSympOut2Txt {
+public class WriteSympOut2Txt implements ISympWriter{
 	/**
 	 * @param outMlst   Hashlist that we want to use
 	 */
 	// Creation of the backup file of the results of the occurrences with Sort
 	// Création avec LileOutpuStream
+	@Override
 	public void outMlst(Map<String, Integer> outMlst) {
 			FileOutputStream fos = null;			
 					try {						

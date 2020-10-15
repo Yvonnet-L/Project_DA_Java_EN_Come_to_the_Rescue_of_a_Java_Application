@@ -1,22 +1,32 @@
 package com.hemebiotech.analytics.sort;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  *  Sort the list send then return it
  * @author ptiqu
  *
  */
-public class SortSymptoms {
+public class SortSymptoms implements ISymptomSort{
+	
+	//public static TreeSet<String> symptomsOrdered=null;
+	
 
-
-	public static List<String> list = new ArrayList<>();
-
-	public static List<String> sortlst(List<String> list) {
-			Collections.sort(list);
-			return list;	   
-		}
+	public static Set<String> SymptomsOrdered( List<String> resultL) {
+		TreeSet<String> symptomsOrderer = new TreeSet<String>();
+		System.out.println("Contenu du tableau");
+	    for (String str : resultL) {
+	      System.out.print(" " + str);
+	      if(str!=null) {
+	    	 symptomsOrderer.add(str);
+	      }
+	      
+	 }
+	    System.out.println(" ");
+		return symptomsOrderer ;
+	}	
 } 
 	
 
@@ -25,12 +35,14 @@ public class SortSymptoms {
  * @return ranked list
 */
 
-/*public class SortSymptoms {
+/*
+ * public static List<String> list = new ArrayList<>();
 
-	public static Set<String> symptomsOrdered ( List<String> symptômes) {
-		
-		Set<String> symptomsOrdered = new TreeSet<>(symptômes);
-		
-		return symptomsOrdered;
-	}   */
+	public static List<String> sortlst(List<String> list) {
+			Collections.sort(list);
+			return list;	   
+		}
+ */
+
+/*   */
 

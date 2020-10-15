@@ -42,7 +42,7 @@ public class WriteSympOut2Txt implements ISympWriter{
 							if ( fos != null ) {
 									fos.close();				
 									System.out.println("--->  OutTxt2.txt file created  2 <---");
-							}
+								}
 							} catch (IOException e) {
 							e.printStackTrace();
 							}

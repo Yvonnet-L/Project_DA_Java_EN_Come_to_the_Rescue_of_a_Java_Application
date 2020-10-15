@@ -5,44 +5,25 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- *  Sort the list send then return it
- * @author ptiqu
+ *  Sort the list send in alphabetical order without duplicate
+ * @author Laurent Y.
  *
  */
 public class SortSymptoms implements ISymptomSort{
+	/***
+	 * @param symptomsList : 
+	 * @return  TreeSet ordered symptoms list without duplicate
+	 */
+	public static Set<String> ordererSymptoms( List<String> symptomsList) {
 	
-	//public static TreeSet<String> symptomsOrdered=null;
-	
-
-	public static Set<String> SymptomsOrdered( List<String> resultL) {
 		TreeSet<String> symptomsOrderer = new TreeSet<String>();
-		System.out.println("Contenu du tableau");
-	    for (String str : resultL) {
-	      System.out.print(" " + str);
-	      if(str!=null) {
-	    	 symptomsOrderer.add(str);
-	      }
-	      
-	 }
-	    System.out.println(" ");
+	    for (String str : symptomsList) {
+	      	if(str!=null) {
+	      		symptomsOrderer.add(str);
+	      	}     
+	    }
 		return symptomsOrderer ;
 	}	
 } 
-	
 
-/*
- * @param list represents the list of uncalculated symptoms
- * @return ranked list
-*/
-
-/*
- * public static List<String> list = new ArrayList<>();
-
-	public static List<String> sortlst(List<String> list) {
-			Collections.sort(list);
-			return list;	   
-		}
- */
-
-/*   */
 

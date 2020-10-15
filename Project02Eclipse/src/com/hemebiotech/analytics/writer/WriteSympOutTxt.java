@@ -16,7 +16,7 @@ public class WriteSympOutTxt implements ISympWriter {
 	 */
 	// Creation of the backup file of the results of the occurrences with Sort	
 	@Override
-	public void outMlst(Map<String, Integer> outMlst) {	
+	public void writerResults(Map<String, Integer> outMlst) {	
 		
 			File fileT = new File("resultsOut.txt");				
 					if(!fileT.exists())

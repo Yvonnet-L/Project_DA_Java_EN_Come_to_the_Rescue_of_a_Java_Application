@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
-
 import com.hemebiotech.analytics.count.CountSymptoms;
 import com.hemebiotech.analytics.reader.ReadSymptomDataFromFile;
 import com.hemebiotech.analytics.sort.SortSymptoms;
@@ -17,7 +16,7 @@ import com.hemebiotech.analytics.writer.WriteSympOutTxt;
 *    classified in alphabetical order with the number of occurrences.
 *    There are 4 steps in the main: Read, Sort, Cout and write.
 *    each step calls a class.
- * @author ptiqu
+ * @author Laurent Y.
  *
  */
 public class DevMain1 {
@@ -38,17 +37,13 @@ public class DevMain1 {
 		 *  2/4 Classe : SortSymptoms		
 		 */	
 			Set <String> symptomsOrdered = new TreeSet<>();
-			symptomsOrdered = SortSymptoms.SymptomsOrdered(resultL);
-			System.out.println(symptomsOrdered);
-			//SortSymptoms.sortlst(resultL);
-	
+			symptomsOrdered = SortSymptoms.ordererSymptoms(resultL);
 		/** 
 		 * 3/4 Classe : CountSymptoms	
 		 * 
-		 * Sends the list to CoutSymp for creation of the hashlist with the number of occurrences				
+		 * Sends the list to CoutSymp for creation of the list with the number of occurrences				
 		 */
-		//CountSymptoms count1 = new CountSymptoms(resultL);	
-		TreeMap<String, Integer> occurR = CountSymptoms.Count(symptomsOrdered, resultL);
+		TreeMap<String, Integer> symptomsOccurrences = CountSymptoms.Count(symptomsOrdered, resultL);
 ;
 		/**
 		 *  4/4 Classe : WriteSymptoms	
@@ -57,8 +52,8 @@ public class DevMain1 {
 		 */
 		WriteSympOutTxt writeOut = new WriteSympOutTxt();
 		WriteSympOut2Txt writeOut2 = new WriteSympOut2Txt();
-		writeOut.outMlst(occurR);
-		writeOut2.outMlst(occurR);
+		writeOut.writerResults(symptomsOccurrences);
+		writeOut2.writerResults(symptomsOccurrences);	
 		System.out.println(  "           ---> End  <-- ");
 
 	}

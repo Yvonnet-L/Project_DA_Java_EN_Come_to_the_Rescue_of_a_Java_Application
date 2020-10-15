@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Simple brute force implementation
- *
+ *@author Caroline Hédot
  */
 public class ReadSymptomDataFromFile implements ISymptomReader { 
 

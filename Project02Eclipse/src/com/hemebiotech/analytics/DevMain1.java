@@ -44,7 +44,7 @@ public class DevMain1 {
 		 * Sends the list to CoutSymp for creation of the list with the number of occurrences				
 		 */
 		TreeMap<String, Integer> symptomsOccurrences = CountSymptoms.Count(symptomsOrdered, resultL);
-;
+
 		/**
 		 *  4/4 Classe : WriteSymptoms	
 		 *  

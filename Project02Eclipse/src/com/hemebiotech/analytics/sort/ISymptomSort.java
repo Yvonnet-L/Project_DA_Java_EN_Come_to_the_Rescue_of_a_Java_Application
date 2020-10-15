@@ -9,14 +9,14 @@ import java.util.Set;
  */
 public abstract interface ISymptomSort {
 
-
-	static Set<String> symptomsOrdered( List<String> resultL) {
-		return null;
 	/**
 	 * If no data is available, return an empty List
 	 * 
 	 * @return ordered SetList without duplicate
 	 */
-		
+
+	static Set<String> SymptomsOrdered( List<String> symptomsList) {
+		return null;
+
 	}
 }

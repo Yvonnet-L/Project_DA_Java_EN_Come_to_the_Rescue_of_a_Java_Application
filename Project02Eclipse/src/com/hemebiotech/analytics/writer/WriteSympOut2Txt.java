@@ -10,9 +10,9 @@ import java.util.Map;
 public class WriteSympOut2Txt implements ISympWriter{
 	/**
 	 * @param outMlst   Hashlist that we want to use
+	 *
+	 * Création with FileOutputStream
 	 */
-	// Creation of the backup file of the results of the occurrences with Sort
-	// Création avec LileOutpuStream
 	@Override
 	public void writerResults(Map<String, Integer> outMlst) {
 			FileOutputStream fos = null;			

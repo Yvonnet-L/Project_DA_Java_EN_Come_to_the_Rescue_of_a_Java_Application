@@ -25,36 +25,51 @@ public class DevMain1 {
 		/**
 		 *  initiation of the file address
 		 */	
-		String stringfile = "symptoms.txt";	
+		//String stringfile = "symptoms.txt";	
+		/**
+		 * choice of  file.txt
+		*  with the FileChooser class
+		 */
+				String stringfile = null;
+				FileChooser fc = new FileChooser();	
+				stringfile = fc.chooserFile();
+		/**
+		 * return with the address of the file starting the processing
+		 */	
+			if (stringfile!=null) {		
 		/**
 		*  1/4 Classe : ReadSymptomDataFromFile
 		*
 		*	ReadSymptomDataFromFile retrieving the list of data from the text file
 		*/
-		ReadSymptomDataFromFile rsymp = new ReadSymptomDataFromFile(stringfile);
-		List<String> resultL = rsymp.getSymptoms();	
+				ReadSymptomDataFromFile rsymp = new ReadSymptomDataFromFile(stringfile);
+				List<String> resultL = rsymp.getSymptoms();	
 		/**
 		 *  2/4 Classe : SortSymptoms		
 		 */	
-			Set <String> symptomsOrdered = new TreeSet<>();
-			symptomsOrdered = SortSymptoms.ordererSymptoms(resultL);
+				Set <String> symptomsOrdered = new TreeSet<>();
+				symptomsOrdered = SortSymptoms.ordererSymptoms(resultL);
 		/** 
 		 * 3/4 Classe : CountSymptoms	
 		 * 
 		 * Sends the list to CoutSymp for creation of the list with the number of occurrences				
 		 */
-		TreeMap<String, Integer> symptomsOccurrences = CountSymptoms.Count(symptomsOrdered, resultL);
 
+		TreeMap<String, Integer> symptomsOccurrences = CountSymptoms.Count(symptomsOrdered, resultL);
+			
 		/**
 		 *  4/4 Classe : WriteSymptoms	
 		 *  
 		 *  Calls class to create the text file
+		 *  2 Wrtite car 2 magnières de faire differentes à voir laquelle on garde !
 		 */
-		WriteSympOutTxt writeOut = new WriteSympOutTxt();
-		WriteSympOut2Txt writeOut2 = new WriteSympOut2Txt();
-		writeOut.writerResults(symptomsOccurrences);
-		writeOut2.writerResults(symptomsOccurrences);	
-		System.out.println(  "           ---> End  <-- ");
-
+				WriteSympOutTxt writeOut = new WriteSympOutTxt();
+				WriteSympOut2Txt writeOut2 = new WriteSympOut2Txt();
+				writeOut.writerResults(symptomsOccurrences);
+				writeOut2.writerResults(symptomsOccurrences);	
+				System.out.println(  "           ---> End  <-- ");
+			} else {
+			System.out.println("File not selected, processing not performed!");
+		}
 	}
 }

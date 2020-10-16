@@ -23,7 +23,7 @@ public class FileChooser {
 
 	public String chooserFile ()  {
 		
-			try {
+		
 					String userDirLocation = System.getProperty("user.dir");
 					File userDir = new File(userDirLocation);
 					JFileChooser fileChooser = new JFileChooser(userDir);
@@ -40,10 +40,10 @@ public class FileChooser {
 							file = fileChooser.getSelectedFile().getPath();
 					} else {
 							file=null;
-							System.out.println(file);
+							System.out.println("plop");
 					}
+									
 					return file;	
-			}finally {
-					}	
-	}
+			}
+	
 }

@@ -26,18 +26,25 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		ArrayList<String> result = new ArrayList<String>();
 		
 		if (filepath != null) {
+			BufferedReader reader= null;
 			try {
-				BufferedReader reader = new BufferedReader (new FileReader(filepath));
+				 reader= new BufferedReader (new FileReader(filepath));
 				String line = reader.readLine();
 				
 				while (line != null) {
 					result.add(line);
 					line = reader.readLine();
 					}
-			reader.close();
+			
 			} catch (IOException e) {
 				e.printStackTrace();
 			}finally {
+				try {
+					reader.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}	
 		return result;

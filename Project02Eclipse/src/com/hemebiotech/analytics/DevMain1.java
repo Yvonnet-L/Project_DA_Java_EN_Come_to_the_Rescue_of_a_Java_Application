@@ -1,12 +1,17 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import com.hemebiotech.analytics.count.CountSymptoms;
+import com.hemebiotech.analytics.count.ISymptomsCount;
+import com.hemebiotech.analytics.reader.ISymptomReader;
 import com.hemebiotech.analytics.reader.ReadSymptomDataFromFile;
+import com.hemebiotech.analytics.sort.ISymptomSort;
 import com.hemebiotech.analytics.sort.SortSymptoms;
+import com.hemebiotech.analytics.writer.ISympWriter;
 import com.hemebiotech.analytics.writer.WriteSympOut2Txt;
 import com.hemebiotech.analytics.writer.WriteSympOutTxt;
 
@@ -42,29 +47,33 @@ public class DevMain1 {
 		*
 		*	ReadSymptomDataFromFile retrieving the list of data from the text file
 		*/
-				ReadSymptomDataFromFile rsymp = new ReadSymptomDataFromFile(stringfile);
+				ISymptomReader rsymp = new ReadSymptomDataFromFile(stringfile);
 				List<String> resultL = rsymp.getSymptoms();	
 		/**
 		 *  2/4 Classe : SortSymptoms		
 		 */	
 				Set <String> symptomsOrdered = new TreeSet<>();
-				symptomsOrdered = SortSymptoms.ordererSymptoms(resultL);
+				ISymptomSort  sympsorter= new SortSymptoms();
+				symptomsOrdered = sympsorter.symptomsOrdered(resultL);
+				
 		/** 
 		 * 3/4 Classe : CountSymptoms	
 		 * 
 		 * Sends the list to CoutSymp for creation of the list with the number of occurrences				
 		 */
 
-		TreeMap<String, Integer> symptomsOccurrences = CountSymptoms.Count(symptomsOrdered, resultL);
+		Map<String, Integer> symptomsOccurrences ;
+		ISymptomsCount sympCounter= new CountSymptoms();
+		symptomsOccurrences = sympCounter.count(symptomsOrdered);
 			
 		/**
 		 *  4/4 Classe : WriteSymptoms	
 		 *  
 		 *  Calls class to create the text file
-		 *  2 Wrtite car 2 magnières de faire differentes à voir laquelle on garde !
+		 *  2 Wrtite car 2 manières de faire differentes à voir laquelle on garde !
 		 */
-				WriteSympOutTxt writeOut = new WriteSympOutTxt();
-				WriteSympOut2Txt writeOut2 = new WriteSympOut2Txt();
+				ISympWriter writeOut = new WriteSympOutTxt();
+				ISympWriter writeOut2 = new WriteSympOut2Txt();
 				writeOut.writerResults(symptomsOccurrences);
 				writeOut2.writerResults(symptomsOccurrences);	
 				System.out.println(  "           ---> End  <-- ");

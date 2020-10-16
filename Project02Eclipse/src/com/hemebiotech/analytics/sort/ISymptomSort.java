@@ -7,7 +7,7 @@ import java.util.Set;
  *  Reads a list to extract an ordered SetList without duplicate
  * @author Laurent Y.
  */
-public abstract interface ISymptomSort {
+public interface ISymptomSort {
 
 	/**
 	 * If no data is available, return an empty List
@@ -15,8 +15,7 @@ public abstract interface ISymptomSort {
 	 * @return ordered SetList without duplicate
 	 */
 
-	static Set<String> SymptomsOrdered( List<String> symptomsList) {
-		return null;
+	public Set<String> symptomsOrdered( List<String> symptomsList);
 
-	}
+	
 }

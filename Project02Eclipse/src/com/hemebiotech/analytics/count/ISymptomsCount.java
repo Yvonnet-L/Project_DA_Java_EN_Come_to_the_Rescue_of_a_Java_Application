@@ -1,7 +1,7 @@
 package com.hemebiotech.analytics.count;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 /**
  * Receipt of a list to return the list of words with their number 
  * of occurrences
@@ -14,8 +14,6 @@ public interface ISymptomsCount {
 	 * @return  a Map with classified symptoms 
 	 * 					and their number of occurrences
 	 */
-			static Map<String, Integer> Count(List<String> resultL) {
-				return null;
-			}
+			public Map<String, Integer> count(Set<String> symptomsOrdered);
 
 }

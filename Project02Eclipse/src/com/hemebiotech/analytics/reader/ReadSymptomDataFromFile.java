@@ -16,6 +16,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	/**
 	 * 
 	 * @param filepath a full or partial path to file with symptomgit branch strings in it, one per line
+	 *           		 finally use of a dialog box to select the file 
 	 */
 	public ReadSymptomDataFromFile (String filepath){
 		this.filepath = filepath;
@@ -37,11 +38,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}finally {
-				/*	try {				
-						((AutoCloseable) result).close();
-					} catch (Exception e) {
-						e.printStackTrace();
-					} */
 			}
 		}	
 		return result;

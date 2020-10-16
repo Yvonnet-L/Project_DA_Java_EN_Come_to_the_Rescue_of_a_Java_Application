@@ -6,14 +6,14 @@ import java.util.Set;
 import java.util.TreeMap;
 /**
  *  Receipt of a list to return the list of words with their number of occurrences
- * @author ptiqu
+ * @author Laurent Y.
  *
  */
 public abstract class CountSymptoms implements ISymptomsCount {
 	/**
 	 *   Receipt of a list to return the list of words with their number of occurrences
 	 * @param symptomsOrdered : the list accessed in alphabetical order
-	 * @param symptomsList : List original list of symtoms not classified
+	 * @param symptomsList : List original list of symptoms not classified
 	 * @return we return a Treemap :  the symptoms with their number of occurrences
 	 */
 	public static TreeMap<String, Integer> Count(Set<String> symptomsOrdered, List<String> symptomsList)

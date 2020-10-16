@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Map;
 /**
  *  Process a HashMap for saving in a text file: results.out.txt
- * @author ptiqu
+ * @author Laurent Y.
  *
  */
 public class WriteSympOutTxt implements ISympWriter {
@@ -59,13 +59,6 @@ public class WriteSympOutTxt implements ISympWriter {
 					} catch(IOException e) {
 						e.printStackTrace();
 					}finally {
-						/*if (fileT != null) {
-							try {				
-								((AutoCloseable) fileT).close();
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						} */
 						  System.out.println("--->  OutTxt.txt file created  1 <---");
 					}	
 	}

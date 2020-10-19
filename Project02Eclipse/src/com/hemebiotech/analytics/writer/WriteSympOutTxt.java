@@ -1,64 +1,51 @@
 package com.hemebiotech.analytics.writer;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 /**
- *  Process a HashMap for saving in a text file: results.out.txt
+ *  Process a Map for saving in a text file: results.out.txt
  * @author Laurent Y.
- *
  */
-public class WriteSympOutTxt implements ISympWriter {
+public class WriteSympOutTxt implements ISympWriter{
 	/**
-	 * @param outMlst   Map that we want to use
-	 * @throws IOException 
-	 */
-	// Creation of the backup file of the results of the occurrences with Sort	
+	 * @param outMlst: Map that lists the symptoms with their occurrences
+	 *
+	 * Création with FileOutputStream
+	 */ 
 	@Override
-	public void writerResults(Map<String, Integer> outMlst) throws IOException {	
+	public void writerResults(Map<String, Integer> outMlst) {
+			FileOutputStream fos = null;			 
+					try {						
+						fos = new FileOutputStream("resultsOut.txt");
+						
+						fos.write(("+--------------------------------------------+"+" \n").getBytes() );
+						fos.write(("|        File processing symptoms.txt        |"+" \n").getBytes() );
+						fos.write(("+-----------------------------+--------------+"+" \n").getBytes() );
+						fos.write(("|             Symptom         |Nb.Occurrences|"+" \n").getBytes() );
+						fos.write(("+-----------------------------+--------------+"+" \n").getBytes() );
 		
-			File fileT = new File("resultsOut.txt");				
-					if(!fileT.exists())
-				{
-					try {
-						fileT.createNewFile();			
-					} catch ( IOException e) {
-						e.printStackTrace();
-					}
-				}
-				  // try/catch necessary to manage a possible writing problem
-					FileWriter writer = new FileWriter(fileT);
-					BufferedWriter bw = new BufferedWriter(writer);
-					try {	
-						bw.write( "+--------------------------------------------+" );
-						bw.newLine();
-						bw.write( "|        File processing symptoms.txt        |");
-						bw.newLine();
-						bw.write( "+-----------------------------+--------------+" );
-						bw.newLine();
-						bw.write( "|             Symptom         |Nb.Occurrences|" );
-						bw.newLine();
-						bw.write( "+-----------------------------+--------------+" );
-						bw.newLine();
-					
-						for ( Map.Entry<String, Integer> entry: outMlst.entrySet() )
+						for(Map.Entry <String, Integer>entry: outMlst.entrySet())
 						{
-							String cle= ("" +  entry.getKey() );
-							String valeur= (""+ entry.getValue() ); 
-							String strfinal = String.format("| %-27s | %12s |\n",cle,valeur);
-							bw.write(strfinal);
-						} 							
-				      bw.write( "+-----------------------------+--------------+" );				
-	
+						String cle= ("" +  entry.getKey() );
+						String valeur= (""+ entry.getValue() ); 
+						String strfinal = String.format("| %-27s | %12s |\n",cle,valeur);
+						fos.write((strfinal).getBytes() );
+						} 
+						fos.write(("+-----------------------------+--------------+").getBytes() );   
+				     
+					// treatment of the exception if the file does not exist
 					} catch(IOException e) {
-						e.printStackTrace();	
+						e.printStackTrace();
 					}finally {
-						// close buffererd and writer - otherwise infinite loop					   
-							bw.close();
-							writer.close(); 
-						  System.out.println("--->  OutTxt.txt file created  1 <---");
+						try {
+							if ( fos != null ) {
+									fos.close();				
+									System.out.println("--->  OutTxt.txt file created  <---");
+								}
+							} catch (IOException e) {
+							e.printStackTrace();
+							}
 					}	
 	}
 }

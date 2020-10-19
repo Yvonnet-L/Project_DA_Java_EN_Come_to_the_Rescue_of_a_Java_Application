@@ -12,7 +12,7 @@ import com.hemebiotech.analytics.reader.ReadSymptomDataFromFile;
 import com.hemebiotech.analytics.sort.ISymptomSort;
 import com.hemebiotech.analytics.sort.SortSymptoms;
 import com.hemebiotech.analytics.writer.ISympWriter;
-import com.hemebiotech.analytics.writer.WriteSympOut2Txt;
+import com.hemebiotech.analytics.writer.WriteSympOutTxt;
 import com.hemebiotech.analytics.writer.WriteSympOutTxt;
 
 /**
@@ -24,7 +24,7 @@ import com.hemebiotech.analytics.writer.WriteSympOutTxt;
  * @author Laurent Y.
  *
  */
-public class DevMain1 {
+public class DevMain1 { 
 
 	public static void main(String[] args) throws IOException {
 		/**
@@ -60,22 +60,18 @@ public class DevMain1 {
 		 * git status
 		 * Sends the list to CoutSymp for creation of the list with the number of occurrences				
 		 */
-
 				Map<String, Integer> symptomsOccurrences ;
 				ISymptomsCount sympCounter= new CountSymptoms();		
-				symptomsOccurrences = sympCounter.count(symptomsOrdered,resultL);
-			
+				symptomsOccurrences = sympCounter.count(symptomsOrdered,resultL);		
 		/**
 		 *  4/4 Classe : WriteSymptoms	
 		 *  
 		 *  Calls class to create the text file
-		 *  2 Wrtite car 2 manières de faire differentes à voir laquelle on garde !
+		 *  2 Write car 2 manières de faire differentes à voir laquelle on garde !
 		 */
 				ISympWriter writeOut = new WriteSympOutTxt();
-				ISympWriter writeOut2 = new WriteSympOut2Txt();
 				writeOut.writerResults(symptomsOccurrences);
-				writeOut2.writerResults(symptomsOccurrences);	
-				System.out.println(  "           ---> End  <-- ");
+				System.out.println(  "        ---> End  <-- ");
 			} else {
 			System.out.println("File not selected, processing not performed!");
 		}

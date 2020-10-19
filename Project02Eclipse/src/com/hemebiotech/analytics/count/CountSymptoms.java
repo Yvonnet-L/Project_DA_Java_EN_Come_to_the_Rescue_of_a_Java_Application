@@ -7,7 +7,7 @@ import java.util.TreeMap;
 /**
  *  Receipt of a list to return the list of words with their number of occurrences
  * @author Laurent Y.
- *
+ *	
  */
 public class CountSymptoms implements ISymptomsCount {
 	/**
@@ -19,7 +19,6 @@ public class CountSymptoms implements ISymptomsCount {
 	@Override
 	public  TreeMap<String, Integer> count(Set<String> symptomsOrdered, List<String>resultL)
 	{
-	
 		TreeMap<String, Integer> symptomsOccurrences = new TreeMap<>();
 		for(String st: symptomsOrdered)
 			{

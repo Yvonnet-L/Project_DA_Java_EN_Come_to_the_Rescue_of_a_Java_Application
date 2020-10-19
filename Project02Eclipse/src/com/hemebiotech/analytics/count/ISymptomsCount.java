@@ -9,11 +9,10 @@ import java.util.Set;
  */
 public interface ISymptomsCount {
 	/**
- 	 * @param symptomsOrdered : the list accessed in alphabetical order
+ 	 * @param symptomsOrdered : the list accessed in alphabet	ical order
 	 * @param resultL List of symptoms with occurrence
 	 * @return  a Map with classified symptoms 
 	 * 					and their number of occurrences
 	 */
 			public Map<String, Integer> count(Set<String> symptomsOrdered, List<String> resultL);
-
 }

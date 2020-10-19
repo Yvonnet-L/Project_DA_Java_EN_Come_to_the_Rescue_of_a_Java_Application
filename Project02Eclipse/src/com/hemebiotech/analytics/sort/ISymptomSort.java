@@ -8,14 +8,10 @@ import java.util.Set;
  * @author Laurent Y.
  */
 public interface ISymptomSort {
-
 	/**
-	 * If no data is available, return an empty List
 	 * 
 	 * @return ordered SetList without duplicate
 	 */
-
-	public Set<String> symptomsOrdered( List<String> symptomsList);
-
+	public Set<String> symptomsOrdered( List<String> symptomsList);	
 	
 }

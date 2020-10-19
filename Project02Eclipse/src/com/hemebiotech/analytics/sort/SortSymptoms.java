@@ -14,7 +14,6 @@ public class SortSymptoms implements ISymptomSort{
 	 * @param symptomsList : 
 	 * @return  TreeSet ordered symptoms list without duplicate
 	 */
-	
 	public Set<String> symptomsOrdered( List<String> symptomsList) {
 	
 		TreeSet<String> symptomsOrderer = new TreeSet<String>();

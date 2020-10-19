@@ -1,9 +1,9 @@
 package com.hemebiotech.analytics;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 import java.util.TreeSet;
 import com.hemebiotech.analytics.count.CountSymptoms;
 import com.hemebiotech.analytics.count.ISymptomsCount;
@@ -26,7 +26,7 @@ import com.hemebiotech.analytics.writer.WriteSympOutTxt;
  */
 public class DevMain1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		/**
 		 *  initiation of the file address
 		 */	
@@ -52,19 +52,18 @@ public class DevMain1 {
 		/**
 		 *  2/4 Classe : SortSymptoms		
 		 */	
-				Set <String> symptomsOrdered = new TreeSet<>();
+				Set <String> symptomsOrdered = new TreeSet<>(); 
 				ISymptomSort  sympsorter= new SortSymptoms();
-				symptomsOrdered = sympsorter.symptomsOrdered(resultL);
-				
+				symptomsOrdered = sympsorter.symptomsOrdered(resultL); 
 		/** 
 		 * 3/4 Classe : CountSymptoms	
-		 * 
+		 * git status
 		 * Sends the list to CoutSymp for creation of the list with the number of occurrences				
 		 */
 
-		Map<String, Integer> symptomsOccurrences ;
-		ISymptomsCount sympCounter= new CountSymptoms();
-		symptomsOccurrences = sympCounter.count(symptomsOrdered);
+				Map<String, Integer> symptomsOccurrences ;
+				ISymptomsCount sympCounter= new CountSymptoms();		
+				symptomsOccurrences = sympCounter.count(symptomsOrdered,resultL);
 			
 		/**
 		 *  4/4 Classe : WriteSymptoms	

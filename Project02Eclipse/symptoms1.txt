@@ -115,6 +115,11 @@ dialated pupils
 cough
 inflamation
 low blood pressure
+allergy
+skin rash
+fear of heights
+memory loss
+giggles
 anxiety
 anxiety
 cough
@@ -124,6 +129,11 @@ epilepsy
 inflamation
 dry mouth
 shortness of breath
+allergy
+skin rash
+fear of heights
+memory loss
+giggles
 headache
 blindness
 dry mouth
@@ -136,3 +146,9 @@ nausea
 dry mouth
 high blood pressure
 allergy
+skin rash
+fear of heights
+memory loss
+giggles
+
+

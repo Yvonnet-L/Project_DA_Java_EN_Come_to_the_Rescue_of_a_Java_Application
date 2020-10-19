@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class WriteSympOut2Txt implements ISympWriter{
 	/**
-	 * @param outMlst   Hashlist that we want to use
+	 * @param outMlst: Map that lists the symptoms with their occurrences
 	 *
 	 * Création with FileOutputStream
 	 */

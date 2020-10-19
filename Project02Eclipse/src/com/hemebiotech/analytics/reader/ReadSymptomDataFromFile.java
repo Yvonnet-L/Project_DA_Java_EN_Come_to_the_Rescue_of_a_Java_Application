@@ -38,11 +38,10 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			
 			} catch (IOException e) {
 				e.printStackTrace();
-			}finally {
+			} finally {
 				try {
 					reader.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

@@ -13,6 +13,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class FileChooser {
 	
 	public String file = null;
+	
 	public String getFile() {
 		return file;
 	}
@@ -22,15 +23,14 @@ public class FileChooser {
 	}
 
 	public String chooserFile ()  {
-		
-		
+			
 					String userDirLocation = System.getProperty("user.dir");
 					File userDir = new File(userDirLocation);
 					JFileChooser fileChooser = new JFileChooser(userDir);
 		
 					fileChooser.setDialogTitle("Select a file");
 					fileChooser.setAcceptAllFileFilterUsed(false);
-					FileNameExtensionFilter filter = new FileNameExtensionFilter("symptoms.txt", "txt","doc");
+					FileNameExtensionFilter filter = new FileNameExtensionFilter("symptoms.txt", "txt");
 					fileChooser.addChoosableFileFilter(filter);
 					fileChooser.getFileSystemView();
 					int returnValue = fileChooser.showOpenDialog(null);
@@ -40,7 +40,6 @@ public class FileChooser {
 							file = fileChooser.getSelectedFile().getPath();
 					} else {
 							file=null;
-							System.out.println("plop");
 					}
 									
 					return file;	

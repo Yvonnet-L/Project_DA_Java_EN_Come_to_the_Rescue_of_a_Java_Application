@@ -12,6 +12,6 @@ public interface ISympWriter {
  * @param outMlst:  Map that lists the symptoms with their occurrences
  * @throws IOException 
  */
-	public  void writerResults(Map<String, Integer> outMlst) throws IOException;
+	public  void writerResults(Map<String, Integer> outMlst) ;
 
 }

@@ -9,7 +9,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *  Class for launching a JFileChooser for the selection of the text file
  * @author Laurent Y.
  *
- */
+ */ 
 public class FileChooser {
 	
 	public String file = null;
@@ -36,7 +36,7 @@ public class FileChooser {
 					int returnValue = fileChooser.showOpenDialog(null);
 					String file; 
 					if (returnValue == JFileChooser.APPROVE_OPTION) {
-							System.out.println(fileChooser.getSelectedFile().getPath());   
+							System.out.println("File being processed --->  " + fileChooser.getSelectedFile().getPath());   
 							file = fileChooser.getSelectedFile().getPath();
 					} else {
 							file=null;

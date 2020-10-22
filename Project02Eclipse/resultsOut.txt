@@ -3,34 +3,27 @@
 +-----------------------------+--------------+ 
 |             Symptom         |Nb.Occurrences| 
 +-----------------------------+--------------+ 
-|                             |            2 |
-| allergy                     |            6 |
-| anxiety                     |            7 |
-| arrhythmias                 |            4 |
-| blindness                   |            2 |
-| blurred vision              |            6 |
+| anxiety                     |            5 |
+| arrhythmias                 |            3 |
+| blindness                   |            1 |
+| blurred vision              |            5 |
 | constricted pupils          |            3 |
 | cough                       |            6 |
 | dialated pupils             |            4 |
-| dizziness                   |            7 |
-| dry mouth                   |           13 |
-| epilepsy                    |            5 |
-| fear of heights             |            3 |
-| fever                       |            8 |
-| giggles                     |            3 |
-| headache                    |            5 |
-| high blood pressure         |           12 |
-| inflamation                 |            9 |
+| dizziness                   |            5 |
+| dry mouth                   |            8 |
+| fever                       |            7 |
+| headache                    |            3 |
+| high blood pressure         |           10 |
+| inflamation                 |            7 |
 | insomnia                    |            4 |
-| low blood pressure          |            6 |
-| memory loss                 |            3 |
-| nausea                      |            6 |
+| low blood pressure          |            4 |
+| nausea                      |            5 |
 | rapid heart rate            |            1 |
 | rash                        |            4 |
-| shortness of breath         |            5 |
-| skin rash                   |            3 |
+| shortness of breath         |            3 |
 | stiff neck                  |            4 |
-| stomach pain                |            5 |
-| tremor                      |            6 |
-| water retention             |            2 |
+| stomach pain                |            3 |
+| tremor                      |            4 |
+| water retention             |            1 |
 +-----------------------------+--------------+

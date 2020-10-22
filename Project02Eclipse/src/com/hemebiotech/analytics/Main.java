@@ -27,8 +27,7 @@ public class Main {
 	public static void main(String[] args) {
 		/**
 		 *  initiation of the file address
-		 *  choice of  file.txt
-		 *  with the FileChooser class
+		 *  choice of file.txt with the FileChooser class
 		 */
 				String stringfile = null;
 				FileChooser fc = new FileChooser();	

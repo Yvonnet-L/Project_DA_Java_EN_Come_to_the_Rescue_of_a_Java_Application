@@ -26,8 +26,7 @@ public class FileChooser {
 			
 					String userDirLocation = System.getProperty("user.dir");
 					File userDir = new File(userDirLocation);
-					JFileChooser fileChooser = new JFileChooser(userDir);
-		
+					JFileChooser fileChooser = new JFileChooser(userDir);		
 					fileChooser.setDialogTitle("Select a file");
 					fileChooser.setAcceptAllFileFilterUsed(false);
 					FileNameExtensionFilter filter = new FileNameExtensionFilter("symptoms.txt", "txt");

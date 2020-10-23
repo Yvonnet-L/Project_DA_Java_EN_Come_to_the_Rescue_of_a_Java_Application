@@ -9,7 +9,7 @@ import java.util.TreeSet;
  * @author Laurent Y.
  *
  */
-public class SortSymptoms implements ISymptomSort{
+public class SortSymptoms implements ISymptomSorter{
 	/***
 	 * @param symptomsList : 
 	 * @return  TreeSet ordered symptoms list without duplicate

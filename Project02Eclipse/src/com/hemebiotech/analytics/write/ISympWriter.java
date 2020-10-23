@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics.writer;
+package com.hemebiotech.analytics.write;
 
 import java.io.IOException;
 import java.util.Map;

@@ -5,13 +5,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import com.hemebiotech.analytics.count.CountSymptoms;
-import com.hemebiotech.analytics.count.ISymptomsCount;
-import com.hemebiotech.analytics.reader.ISymptomReader;
-import com.hemebiotech.analytics.reader.ReadSymptomDataFromFile;
-import com.hemebiotech.analytics.sort.ISymptomSort;
+import com.hemebiotech.analytics.count.ISymptomsCounter;
+import com.hemebiotech.analytics.read.ISymptomReader;
+import com.hemebiotech.analytics.read.ReadSymptomDataFromFile;
+import com.hemebiotech.analytics.sort.ISymptomSorter;
 import com.hemebiotech.analytics.sort.SortSymptoms;
-import com.hemebiotech.analytics.writer.ISympWriter;
-import com.hemebiotech.analytics.writer.WriteSympOutTxt;
+import com.hemebiotech.analytics.write.ISympWriter;
+import com.hemebiotech.analytics.write.WriteSympOutTxt;
 
 /**
  * 	 This program retrieves a list of data from the symptoms.txt file,
@@ -47,7 +47,7 @@ public class Main {
 		 *  2/4 Classe : SortSymptoms		
 		 */	
 				Set <String> symptomsOrdered = new TreeSet<>(); 
-				ISymptomSort  sympsorter= new SortSymptoms();
+				ISymptomSorter  sympsorter= new SortSymptoms();
 				symptomsOrdered = sympsorter.symptomsOrdered(resultL); 
 		/** 
 		 * 3/4 Classe : CountSymptoms	
@@ -55,7 +55,7 @@ public class Main {
 		 * Sends the list to CoutSymp for creation of the list with the number of occurrences				
 		 */
 				Map<String, Integer> symptomsOccurrences ;
-				ISymptomsCount sympCounter= new CountSymptoms();		
+				ISymptomsCounter sympCounter= new CountSymptoms();		
 				symptomsOccurrences = sympCounter.count(symptomsOrdered,resultL);		
 		/**
 		 *  4/4 Classe : WriteSymptoms	

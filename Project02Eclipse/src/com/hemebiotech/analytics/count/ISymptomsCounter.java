@@ -7,7 +7,7 @@ import java.util.Set;
  * Receipt of a list to return the list of words with their occurrences
  *  @author Laurent Y.
  */
-public interface ISymptomsCount {
+public interface ISymptomsCounter {
 	/**
  	 * @param symptomsOrdered : the list accessed in alphabet	ical order
 	 * @param resultL List of symptoms with occurrence

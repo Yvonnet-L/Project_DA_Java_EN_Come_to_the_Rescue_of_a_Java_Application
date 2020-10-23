@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics.reader;
+package com.hemebiotech.analytics.read;
 
 import java.util.List;
 

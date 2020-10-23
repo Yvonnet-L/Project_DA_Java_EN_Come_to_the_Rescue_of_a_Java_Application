@@ -9,7 +9,7 @@ import java.util.TreeMap;
  * @author Laurent Y.
  *	
  */
-public class CountSymptoms implements ISymptomsCount {
+public class CountSymptoms implements ISymptomsCounter {
 	/**
 	 *   
 	 * @param symptomsOrdered : the list accessed in alphabetical order

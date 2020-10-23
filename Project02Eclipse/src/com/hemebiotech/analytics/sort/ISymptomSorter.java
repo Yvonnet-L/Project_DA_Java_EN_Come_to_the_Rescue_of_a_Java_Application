@@ -7,7 +7,7 @@ import java.util.Set;
  *  Reads a list to extract an ordered SetList without duplicate
  * @author Laurent Y.
  */
-public interface ISymptomSort {
+public interface ISymptomSorter {
 	/**
 	 * 
 	 * @return ordered SetList without duplicate
